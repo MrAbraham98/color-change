@@ -37,11 +37,11 @@ void main() {
       await tester.pumpWidget(createHomeScreen());
 
       var text = tester.widget<Text>(find.text('Hello there'));
-      expect(text.style!.color, (equals(Colors.white)));
+      expect(text.style!.color, (equals(Colors.black)));
 
 
       // Create a mock state with a dark color tone
-      final state = HomePageState(colorTone: ColorTone.light);
+      final state = HomePageState(colorTone: ColorTone.dark);
 
       // Build the widget with the mock state
       await tester.pumpWidget(
@@ -62,7 +62,7 @@ void main() {
 
       // Verify that the text has the correct color based on the state
       final textWidget = tester.widget<Text>(find.text('Hello there'));
-      expect(textWidget.style!.color, equals(Colors.black));
+      expect(textWidget.style!.color, equals(Colors.white));
 
     });
   });
